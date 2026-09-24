@@ -39,7 +39,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 }
 
 // ウィンドウクラス名
-const auto ClassName = TEXT("DirectXGameWindowClass");
+const auto ClassName = TEXT("d3d12-engineWindowClass");
 
 } // namespace
 

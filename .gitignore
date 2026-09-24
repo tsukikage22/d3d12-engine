@@ -395,5 +395,7 @@ imgui.ini
 
 DirectXGame-v*/
 DirectXGame-v*.zip
+d3d12-engine-v*/
+d3d12-engine-v*.zip
 
 screenshots/
