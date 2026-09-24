@@ -1,7 +1,8 @@
-# Direct3D 12 自作ゲームエンジン
+# d3d12-engine
 
-Windows 11 / Direct3D 12 上で，レンダリングパイプライン・GPU リソース管理・シーン管理を自作しているゲームエンジンです．
+Windows 11 / Direct3D 12 上で，レンダリングパイプライン・GPU リソース管理・シーン管理を自作しているレンダリングエンジンです．
 物理量（測光量）に基づくライティングと露出，IBL（Image Based Lighting），HDR ディスプレイ出力，directional light のシャドウマッピングまでを実装しています．
+今後はゲームエンジンとして使えるように機能を広げ，このエンジンを使うゲームを別リポジトリで制作する予定です．
 
 |                  |                                                    |
 | ---------------- | -------------------------------------------------- |
@@ -11,7 +12,7 @@ Windows 11 / Direct3D 12 上で，レンダリングパイプライン・GPU リ
 | 開発体制         | 個人開発                                           |
 | ビルド           | Visual Studio 2022 / vcpkg                         |
 
-ゲームエンジン（Unity / Unreal Engine）やレンダリングフレームワークは使わず，生の Direct3D 12 API 上に描画・同期・メモリ管理を自前で実装しています．
+ゲームエンジン（Unity / Unreal Engine）やレンダリングフレームワークは使わず，Direct3D 12 API 上に描画・同期・メモリ管理を自前で実装しています．
 
 ---
 
@@ -240,20 +241,20 @@ RTX 4070 / 1280×720 / デモシーンとデバッグ UI を表示した状態�
 ### 手順
 
 ```bash
-git clone https://github.com/tsukikage22/DirectXGame.git
-cd DirectXGame
+git clone https://github.com/tsukikage22/d3d12-engine.git
+cd d3d12-engine
 ```
 
 HDRI・3D モデルはリポジトリに含めていません．
-[Releases](https://github.com/tsukikage22/DirectXGame/releases) の zip に含まれる `assets/` を，リポジトリの `assets/` に配置してください．
+[Releases](https://github.com/tsukikage22/d3d12-engine/releases) の zip に含まれる `assets/` を，リポジトリの `assets/` に配置してください．
 出典は [assets/CREDITS.md](assets/CREDITS.md) を参照してください．
 
-`DirectXGame.sln` を Visual Studio 2022 で開き，構成を `Release | x64` にしてビルドします．
+`d3d12-engine.sln` を Visual Studio 2022 で開き，構成を `Release | x64` にしてビルドします．
 依存ライブラリは `vcpkg.json` に記述してあり，ビルド時に自動で取得・ビルドされます（初回は時間がかかります）．
 
 ### ビルドせずに実行する
 
-[Releases](https://github.com/tsukikage22/DirectXGame/releases) に，実行ファイルとアセットをまとめた zip を置いています．
+[Releases](https://github.com/tsukikage22/d3d12-engine/releases) に，実行ファイルとアセットをまとめた zip を置いています．
 展開して `App.exe` を実行してください．
 
 ---
@@ -296,7 +297,7 @@ HDRI・3D モデルはリポジトリに含めていません．
 ## ディレクトリ構成
 
 ```
-DirectXGame/
+d3d12-engine/
 ├── App/ Engine/ Game/     Visual Studio プロジェクト
 │                          App: 実行ファイル / Engine: 静的ライブラリ / Game: エンジンを使う側
 ├── include/
