@@ -33,7 +33,7 @@ bool Application::Init()
     const int windowWidth  = 1280;
     const int windowHeight = 720;
 
-    if (!m_Window.Create(windowWidth, windowHeight, L"DirectX Game"))
+    if (!m_Window.Create(windowWidth, windowHeight, L"d3d12-engine"))
     {
         CoUninitialize();
         return false;
